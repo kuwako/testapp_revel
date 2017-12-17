@@ -24,3 +24,19 @@ func (c App) Hoge() revel.Result {
 
 	return c.RenderJSON(result)
 }
+
+func (c App) Fuga(number int) revel.Result {
+	type Result struct {
+		Message string `json:"message"`
+		Number  int    `json:"number"`
+	}
+
+	number = number * 10
+
+	result := Result{
+		Message: "url/:引数名とする引数を取れるようになります",
+		Number:  number,
+	}
+
+	return c.RenderJSON(result)
+}

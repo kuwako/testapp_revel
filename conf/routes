@@ -6,7 +6,7 @@ module:testrunner
 
 GET     /                                       App.Index
 GET     /hoge                                   App.Hoge
-# GET     /fuga/:number                           App.Fuga
+GET     /fuga/:number                           App.Fuga
 GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
