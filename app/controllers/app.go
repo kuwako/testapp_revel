@@ -1,7 +1,11 @@
 package controllers
 
 import (
+	"fmt"                            // 新規追加
+	"github.com/go-sql-driver/mysql" // 新規追加
+	"github.com/jinzhu/gorm"         // 新規追加
 	"github.com/revel/revel"
+	"strings" // 新規追加
 )
 
 type App struct {
@@ -39,4 +43,10 @@ func (c App) Fuga(number int) revel.Result {
 	}
 
 	return c.RenderJSON(result)
+}
+
+type User struct {
+	Id   int64  `json:"id"`
+	Name string `json:"name"`
+	Age  int32  `json:"age"`
 }
